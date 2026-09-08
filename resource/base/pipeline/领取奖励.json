@@ -1,0 +1,366 @@
+{
+    "领取奖励": {
+        "next": [
+            "任务奖励",
+            "通行证奖励",
+            "邮箱奖励",
+            "支援角色友情币",
+            "[JumpBack]返回"
+        ]
+    },
+    "任务奖励": {
+        "recognition": "OCR",
+        "expected": "任务",
+        "roi": [
+            1173,
+            260,
+            85,
+            85
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "timeout": 10000,
+        "on_error": ["返回主页"],
+        "next": [
+            "任务奖励领取",
+            "结束每日",
+            "任务奖励"
+        ]
+    },
+    "任务奖励领取": {
+        "recognition": "TemplateMatch",
+        "template": "红点.png",
+        "roi": [
+            30,
+            126,
+            256,
+            280
+        ],
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "next": [
+            "[JumpBack]一键领取",
+            "[JumpBack]领取进度奖励",
+            "任务奖励领取",
+            "结束每日"
+        ]
+    },
+    "领取进度奖励": {
+        "recognition": "TemplateMatch",
+        "template": "红点.png",
+        "roi": [
+            353,
+            607,
+            596,
+            97
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "获得资源"
+        ]
+    },
+    "结束每日": {
+        "recognition": "TemplateMatch",
+        "template": "红点.png",
+        "roi": [
+            37,
+            114,
+            914,
+            588
+        ],
+        "inverse": true,
+        "threshold": 0.9,
+        "post_delay": 200,
+        "next": [
+            "通行证奖励",
+            "邮箱奖励",
+            "支援角色友情币",
+            "主界面",
+            "[JumpBack]返回"
+        ]
+    },
+    "通行证奖励": {
+        "recognition": "OCR",
+        "expected": "通行证",
+        "roi": [
+            1169,
+            78,
+            87,
+            93
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "timeout": 10000,
+        "on_error": ["返回主页"],
+        "next": [
+            "[JumpBack]一键领取",
+            "通行证任务",
+            "退出通行证",
+            "通行证奖励"
+        ]
+    },
+    "通行证任务": {
+        "recognition": "OCR",
+        "expected": "任务",
+        "roi": [
+            784,
+            629,
+            192,
+            64
+        ],
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "next": [
+            "[JumpBack]一键领取",
+            "领取通行证奖励",
+            "通行证任务"
+        ]
+    },
+    "领取通行证奖励": {
+        "recognition": "OCR",
+        "expected": "奖励",
+        "roi": [
+            784,
+            629,
+            192,
+            64
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "[JumpBack]一键领取",
+            "退出通行证",
+            "领取通行证奖励"
+        ]
+    },
+    "退出通行证": {
+        "recognition": "TemplateMatch",
+        "template": "一键领取结束.png",
+        "roi": [
+            1004,
+            610,
+            249,
+            93
+        ],
+        "next": [
+            "邮箱奖励",
+            "支援角色友情币",
+            "主界面",
+            "[JumpBack]返回"
+        ]
+    },
+    "邮箱奖励": {
+        "recognition": "TemplateMatch",
+        "template": "邮箱.png",
+        "roi": [
+            1089,
+            7,
+            109,
+            60
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "target": [
+                499,
+                99,
+                743,
+                347
+            ],
+            "time": 1000
+        },
+        "timeout": 10000,
+        "on_error": ["返回主页"],
+        "next": [
+            "邮箱-领取-结束",
+            "邮箱-点击邮件",
+            "邮箱奖励"
+        ]
+    },
+    "邮箱-点击邮件": {
+        "recognition": "ColorMatch",
+        "lower": [
+            200,
+            200,
+            200
+        ],
+        "upper": [
+            255,
+            255,
+            255
+        ],
+        "roi": [
+            34,
+            90,
+            402,
+            482
+        ],
+        "count": 1000,
+        "connected": true,
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "邮箱-领取",
+            "邮箱-点击邮件"
+        ]
+    },
+    "邮箱-领取": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            921,
+            592,
+            346,
+            111
+        ],
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "[JumpBack]邮箱-获得资源",
+            "邮箱-点击邮件",
+            "邮箱-领取-结束"
+        ]
+    },
+    "邮箱-获得资源": {
+        "recognition": "OCR",
+        "expected": "获得资源",
+        "roi": [
+            492,
+            214,
+            303,
+            105
+        ],
+        "pre_wait_freezes": 500,
+        "action": "Click",
+        "target": [
+            519,
+            15,
+            133,
+            59
+        ],
+        "post_wait_freezes": 500
+    },
+    "邮箱-领取-结束": {
+        "recognition": "OCR",
+        "expected": "删除",
+        "roi": [
+            987,
+            635,
+            220,
+            41
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "支援角色友情币",
+            "主界面",
+            "[JumpBack]返回"
+        ]
+    },
+    "支援角色友情币": {
+        "recognition": "TemplateMatch",
+        "template": "LV.png",
+        "roi": [
+            36,
+            423,
+            173,
+            46
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "timeout": 10000,
+        "on_error": ["返回主页"],
+        "next": [
+            "进入支援角色",
+            "支援角色友情币"
+        ]
+    },
+    "进入支援角色": {
+        "recognition": "OCR",
+        "expected": [
+            "支援",
+            "角色"
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            434,
+            335,
+            85
+        ],
+        "post_wait_freezes": 200,
+        "next": [
+            "领取友情币1",
+            "进入支援角色"
+        ]
+    },
+    "领取友情币1": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            215,
+            152,
+            148,
+            132
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]获得友情币",
+            "领取友情币2",
+            "领取友情币1"
+        ]
+    },
+    "领取友情币2": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            218,
+            306,
+            141,
+            132
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]获得友情币",
+            "领取友情币3",
+            "领取友情币2"
+        ]
+    },
+    "领取友情币3": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            220,
+            454,
+            141,
+            129
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]获得友情币",
+            "返回主页"
+        ]
+    },
+    "获得友情币": {
+        "recognition": "OCR",
+        "expected": "获得资源",
+        "roi": [
+            492,
+            214,
+            303,
+            105
+        ],
+        "pre_wait_freezes": 500,
+        "action": "Click",
+        "target": [
+            519,
+            15,
+            133,
+            59
+        ],
+        "post_wait_freezes": 500
+    }
+}

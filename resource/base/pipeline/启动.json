@@ -1,0 +1,138 @@
+{
+    "进入主页": {
+        "next": [
+            "主界面",
+            "[JumpBack]下载资源",
+            "[JumpBack]活动公告",
+            "[JumpBack]登录界面",
+            "[JumpBack]点击签到",
+            "[JumpBack]获得皮肤",
+            "[JumpBack]签到完成",
+            "[JumpBack]返回主页",
+            "[JumpBack]启动游戏"
+        ]
+    },
+    "启动游戏": {
+        "action": "StartApp",
+        "package": "com.feimo.hazeworld",
+        "timeout": 10000
+    },
+    "下载资源": {
+        "recognition": "OCR",
+        "roi": [
+            384,
+            228,
+            504,
+            121
+        ],
+        "expected": "下载",
+        "action": "Click",
+        "target": [
+            698,
+            414,
+            220,
+            38
+        ]
+    },
+    "活动公告": {
+        "recognition": "OCR",
+        "expected": "公告",
+        "roi": [
+            389,
+            61,
+            427,
+            57
+        ],
+        "pre_wait_freezes": {
+            "target": [
+                117,
+                55,
+                1044,
+                602
+            ],
+            "time": 200
+        },
+        "action": "Click",
+        "target": [
+            499,
+            17,
+            206,
+            25
+        ],
+        "post_delay": 1000
+    },
+    "登录界面": {
+        "recognition": "TemplateMatch",
+        "template": "切换账号.png",
+        "roi": [
+            1138,
+            15,
+            132,
+            85
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": [
+            569,
+            555,
+            143,
+            73
+        ],
+        "post_delay": 1000
+    },
+    "点击签到": {
+        "recognition": "OCR",
+        "expected": "签到",
+        "roi": [
+            1054,
+            604,
+            217,
+            48
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "签到完成",
+            "点击签到",
+            "[JumpBack]获得皮肤",
+            "[JumpBack]获得资源"
+        ]
+    },
+    "获得皮肤": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "roi": [
+            1144,
+            10,
+            122,
+            86
+        ],
+        "action": "Click",
+        "post_delay": 200
+    },
+    "签到完成": {
+        "recognition": "TemplateMatch",
+        "template": "已签到.png",
+        "roi": [
+            1027,
+            584,
+            247,
+            80
+        ],
+        "post_delay": 200,
+        "next": [
+            "主界面",
+            "[JumpBack]返回主页"
+        ]
+    },
+    "主界面": {
+        "recognition": "TemplateMatch",
+        "template": "设置.png",
+        "roi": [
+            1133,
+            8,
+            143,
+            61
+        ]
+    }
+}

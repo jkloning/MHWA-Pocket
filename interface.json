@@ -1,0 +1,39 @@
+{
+    "interface_version": 2,
+    "name": "MHWA",
+    "label": "苍雾世界助手",
+    "version": "1.0.2",
+    "icon": "icon.png",
+    "url": "https://github.com/yeluo2022/MHWA",
+    "github": "https://github.com/jkloning/MHWA-Pocket",
+    "controller": [
+        {
+            "name": "ADB 默认方式",
+            "type": "Adb"
+        }
+    ],
+    "resource": [
+        {
+            "name": "官服",
+            "path": [
+                "./resource/base"
+            ],
+            "controller": [
+                "ADB 默认方式"
+            ]
+        },
+        {
+            "name": "B 服",
+            "path": [
+                "./resource/base",
+                "./resource/bilibili"
+            ],
+            "controller": [
+                "ADB 默认方式"
+            ]
+        }
+    ],
+    "import": [
+        "tasks/MHWA.json"
+    ]
+}

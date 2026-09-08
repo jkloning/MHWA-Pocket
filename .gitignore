@@ -1,0 +1,14 @@
+# 打包产物与本地调试
+debug/
+*.log
+*.apk
+
+# 流水线迁移备份（不进 APK，也不入库）
+*.bak
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# Mimosa 本地扫描产物
+.mimosa/

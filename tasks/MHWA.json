@@ -1,0 +1,542 @@
+{
+    "task": [
+        {
+            "name": "启动游戏",
+            "entry": "进入主页",
+            "controller": [
+                "ADB 默认方式"
+            ]
+        },
+        {
+            "name": "指挥室",
+            "entry": "指挥室",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "doc": "指挥室远征暂时仅支持重复之前的选项出击，如有自定义需求请关闭此功能，也可反馈需求"
+        },
+        {
+            "name": "每日免费礼包",
+            "entry": "每日免费礼包",
+            "controller": [
+                "ADB 默认方式"
+            ]
+        },
+        {
+            "name": "演习",
+            "entry": "演习",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "option": [
+                "代理作战",
+                "补充票（不消耗结晶）"
+            ]
+        },
+        {
+            "name": "领取奖励",
+            "entry": "领取奖励",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "option": [
+                "任务奖励",
+                "通行证奖励",
+                "邮箱奖励",
+                "支援角色友情币"
+            ]
+        },
+        {
+            "name": "好友点赞",
+            "entry": "好友点赞",
+            "controller": [
+                "ADB 默认方式"
+            ]
+        },
+        {
+            "name": "超限共鸣关卡",
+            "entry": "装甲进阶",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "option": [
+                "选择超限共鸣关卡"
+            ]
+        },
+        {
+            "name": "作战",
+            "entry": "作战",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "option": [
+                "关卡选择"
+            ],
+            "doc": "作战暂时只支持最大次数扫荡"
+        },
+        {
+            "name": "商店资源购买",
+            "entry": "商店资源购买",
+            "controller": [
+                "ADB 默认方式"
+            ],
+            "option": [
+                "兑换商店（精英和后勤）",
+                "荣誉凭证"
+            ],
+            "doc": "暂时仅支持兑换商店中精英和后勤商店，以及荣誉凭证商店\n精英商店优先兑换每周更新的演习券，其次将剩余高价值物资全部兑换\n后勤商店除盾币外默认全换\n荣誉凭证商店仅兑换常驻票及高价值物资\n可能有bug，如有遇到请反馈"
+        },
+        {
+            "name": "关闭游戏",
+            "entry": "关闭游戏",
+            "controller": [
+                "ADB 默认方式"
+            ]
+        }
+    ],
+    "option": {
+        "任务奖励": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "任务奖励": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "任务奖励": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "通行证奖励": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "通行证奖励": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "通行证奖励": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "邮箱奖励": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "邮箱奖励": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "邮箱奖励": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "支援角色友情币": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "支援角色友情币": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "支援角色友情币": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "代理作战": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "代理作战": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "代理作战": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "补充票（不消耗结晶）": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "补充票（不消耗结晶）": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "补充票（不消耗结晶）": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "选择超限共鸣关卡": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "装甲进阶": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "逆爱",
+                    "pipeline_override": {
+                        "选择超限共鸣关卡": {
+                            "template": "超限共鸣1.png"
+                        },
+                        "确认超限共鸣关卡": {
+                            "expected": "逆爱"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "索贝克",
+                    "pipeline_override": {
+                        "选择超限共鸣关卡": {
+                            "template": "超限共鸣2.png"
+                        },
+                        "确认超限共鸣关卡": {
+                            "expected": "索贝克"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "利维坦",
+                    "pipeline_override": {
+                        "选择超限共鸣关卡": {
+                            "template": "超限共鸣3.png"
+                        },
+                        "确认超限共鸣关卡": {
+                            "expected": "利维坦"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "关卡选择": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "作战": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "经验获取",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "异兽清缴.png"
+                        },
+                        "选择关卡": {
+                            "expected": "经验"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "盾币获取",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "异兽清缴.png"
+                        },
+                        "选择关卡": {
+                            "expected": "盾币"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "幻化星碎获取",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "异兽清缴.png"
+                        },
+                        "选择关卡": {
+                            "expected": "幻化"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "生命核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "生命"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "攻击核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "攻击"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "装甲核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "装甲"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "暴击核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "暴击"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "爆发核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "爆发"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "机动核心",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "核心制造.png"
+                        },
+                        "选择关卡": {
+                            "expected": "机动"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-05.png"
+                        }
+                    }
+                },
+                {
+                    "name": "防卫觉醒",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "队员特训.png"
+                        },
+                        "选择关卡": {
+                            "expected": "防卫"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "攻击觉醒",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "队员特训.png"
+                        },
+                        "选择关卡": {
+                            "expected": "攻击"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "火力觉醒",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "队员特训.png"
+                        },
+                        "选择关卡": {
+                            "expected": "火力"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                },
+                {
+                    "name": "支援觉醒",
+                    "pipeline_override": {
+                        "选择资源": {
+                            "template": "队员特训.png"
+                        },
+                        "选择关卡": {
+                            "expected": "支援"
+                        },
+                        "点击关卡": {
+                            "template": "关卡-10.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "兑换商店（精英和后勤）": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "兑换商店": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "仅精英商店",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": true
+                        },
+                        "后勤商店": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "仅后勤商店",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": false
+                        },
+                        "后勤商店": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": true
+                        },
+                        "后勤商店": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "荣誉凭证": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "荣誉凭证": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "荣誉凭证": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

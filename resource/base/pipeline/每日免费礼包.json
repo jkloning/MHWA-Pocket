@@ -1,0 +1,99 @@
+{
+    "每日免费礼包": {
+        "next": [
+            "免费礼包",
+            "[JumpBack]返回主页"
+        ]
+    },
+    "免费礼包": {
+        "recognition": "OCR",
+        "expected": "商城",
+        "roi": [
+            685,
+            641,
+            163,
+            66
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "首页推荐",
+            "免费礼包"
+        ]
+    },
+    "首页推荐": {
+        "recognition": "OCR",
+        "expected": [
+            "通常",
+            "礼包"
+        ],
+        "roi": [
+            11,
+            488,
+            210,
+            77
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "无免费礼包",
+            "识别到免费礼包",
+            "首页推荐"
+        ]
+    },
+    "无免费礼包": {
+        "recognition": "TemplateMatch",
+        "template": "免费礼包.png",
+        "roi": [
+            251,
+            185,
+            1015,
+            519
+        ],
+        "inverse": true,
+        "next": ["返回主页"]
+    },
+    "识别到免费礼包": {
+        "recognition": "TemplateMatch",
+        "template": "免费礼包.png",
+        "roi": [
+            251,
+            185,
+            1015,
+            519
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "购买免费礼包",
+            "识别到免费礼包"
+        ]
+    },
+    "购买免费礼包": {
+        "recognition": "OCR",
+        "expected": [
+            "是否购买",
+            "免费",
+            "礼包"
+        ],
+        "roi": [
+            464,
+            161,
+            274,
+            47
+        ],
+        "pre_wait_freezes": 200,
+        "action": "Click",
+        "target": [
+            697,
+            484,
+            205,
+            42
+        ],
+        "post_wait_freezes": 200,
+        "next": [
+            "返回主页",
+            "[JumpBack]获得资源"
+        ]
+    }
+}
