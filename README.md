@@ -7,7 +7,7 @@
 - Pipeline 迁移至 MaaFramework v5.1 语法（官方 migrate_pipeline_v5.py，`interrupt` → `[JumpBack]`）
 - interface 由 V1 升级为 Project Interface V2（option 补 `type`，任务补 `controller`）
 - OCR 模型：MaaCommonAssets ppocr_v4/zh_cn（装配进 `resource/base/model/ocr/`）
-- 双资源：官服（`com.feimo.hazeworld`）/ B 服（`com.feimo.hazeworld.bilibili`）
+- 三资源按游戏安装渠道选择：官服 `com.feimo.hazeworld.main`（官网/APK 站直装的主流官服包）/ 官网直装包 `com.feimo.hazeworld`（旧官网包名）/ B 服 `com.feimo.hazeworld.bilibili`
   ——上游硬编码的 MuMu 渠道包 `com.feimo.hazeworld.mumu` 仅适用于模拟器，手机端不可用
 
 ## 更新流程

@@ -14,7 +14,7 @@
     },
     "启动游戏": {
         "action": "StartApp",
-        "package": "com.feimo.hazeworld",
+        "package": "com.feimo.hazeworld.main",
         "timeout": 10000
     },
     "下载资源": {

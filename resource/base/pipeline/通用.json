@@ -243,6 +243,6 @@
     },
     "关闭游戏": {
         "action": "StopApp",
-        "package": "com.feimo.hazeworld"
+        "package": "com.feimo.hazeworld.main"
     }
 }

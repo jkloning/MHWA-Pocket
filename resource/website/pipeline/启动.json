@@ -1,0 +1,7 @@
+{
+    "启动游戏": {
+        "action": "StartApp",
+        "package": "com.feimo.hazeworld",
+        "timeout": 10000
+    }
+}
