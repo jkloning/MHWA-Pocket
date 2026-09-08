@@ -9,8 +9,26 @@
             "[JumpBack]获得皮肤",
             "[JumpBack]签到完成",
             "[JumpBack]返回主页",
+            "[JumpBack]加载等待",
             "[JumpBack]启动游戏"
         ]
+    },
+    "加载等待": {
+        "recognition": "OCR",
+        "expected": [
+            "LOADING",
+            "载入",
+            "加载",
+            "游戏资源中"
+        ],
+        "roi": [
+            545,
+            595,
+            635,
+            115
+        ],
+        "action": "DoNothing",
+        "post_delay": 2000
     },
     "启动游戏": {
         "action": "StartApp",
