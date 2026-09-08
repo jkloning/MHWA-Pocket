@@ -15,7 +15,9 @@
     "启动游戏": {
         "action": "StartApp",
         "package": "com.feimo.hazeworld.main",
-        "timeout": 10000
+        "timeout": 10000,
+        "rate_limit": 60000,
+        "post_delay": 20000
     },
     "下载资源": {
         "recognition": "OCR",
