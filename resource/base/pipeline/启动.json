@@ -2,7 +2,7 @@
     "进入主页": {
         "next": [
             "主界面",
-            "[JumpBack]下载资源",
+            "[JumpBack]下载确认",
             "[JumpBack]活动公告",
             "[JumpBack]登录界面",
             "[JumpBack]点击签到",
@@ -19,7 +19,8 @@
             "LOADING",
             "载入",
             "加载",
-            "游戏资源中"
+            "游戏资源中",
+            "下载游戏资源"
         ],
         "roi": [
             545,
@@ -37,21 +38,41 @@
         "rate_limit": 60000,
         "post_delay": 20000
     },
-    "下载资源": {
+    "下载确认": {
         "recognition": "OCR",
-        "roi": [
-            384,
-            228,
-            504,
-            121
+        "expected": [
+            "游戏需要下载额外",
+            "需要下载额外"
         ],
-        "expected": "下载",
+        "roi": [
+            340,
+            230,
+            620,
+            130
+        ],
+        "action": "DoNothing",
+        "next": [
+            "下载确认点击"
+        ]
+    },
+    "下载确认点击": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "roi": [
+            300,
+            400,
+            700,
+            200
+        ],
         "action": "Click",
-        "target": [
-            698,
-            414,
-            220,
-            38
+        "post_delay": 2000,
+        "next": [
+            "主界面",
+            "[JumpBack]下载确认",
+            "[JumpBack]加载等待",
+            "[JumpBack]启动游戏"
         ]
     },
     "活动公告": {
